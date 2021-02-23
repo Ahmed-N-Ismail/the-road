@@ -1,0 +1,571 @@
+/* start commen style */
+*{
+    font-family: 'Vollkorn', serif;
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-decoration: none;
+}
+button{
+    cursor: pointer;
+}
+ul{
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+}
+:root{
+    --primary-color: #2b81e4;
+    --secondary-color: #eee;
+    --white-color: #fff;
+    --grey-color: #555;
+    --light-grey-color: #777;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin: 3.5rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 1rem 3rem var(--grey-color);
+    position: relative;
+}
+.sec-pad{
+    padding: 6rem 0;
+}
+.change > .front-side{
+    transform: translateZ(-5rem) translateX(3rem);
+    box-shadow: 0 2rem 4rem #777;
+    opacity: .5;
+    z-index: 0;
+}
+/* end commen style */
+/* navbar */
+.open-icon{
+    z-index: 20;
+    
+    position: fixed;
+}
+.open-icon,
+.close-icon{
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    border-radius: 50%;
+    color: var(--grey-color);
+    background-color: var(--white-color);
+    cursor: pointer;
+    top: 7%;
+    left: 4%;
+}
+.nav{
+    position: fixed;
+    top: 5%;
+    left: 2.5%;
+    width: 95%;
+    margin: auto;
+    height: 0;
+    z-index: 30;
+    background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.3)), url(../img/navbar-bg.jpg) center no-repeat;
+    background-size: cover;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.ch .nav{
+    height: calc(100vh - 3rem);
+    visibility: visible;
+    opacity: 1;
+}
+.nav-list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-link{
+    flex: 1;
+    height: 0;
+    visibility: hidden;
+    opacity: .8;
+}
+.nav-link:hover{
+    opacity: 1;
+}
+.nav-link a{
+    font-size: 2.5rem;
+    color: var(--white-color);
+}
+.ch .nav-link{
+    height: 100%;
+    visibility: visible;
+}
+.nav-link:nth-child(1){
+    background-color: rgb(100, 149, 237);
+    transition: height .2s;
+}
+.nav-link:nth-child(2){
+    background-color: rgb(127, 255, 212);
+    transition: height .4s;
+}
+.nav-link:nth-child(3){
+    background-color: rgb(255, 160, 122);
+    transition: height .6s;
+}
+.nav-link:nth-child(4){
+    background-color: rgb(240, 128, 128);
+    transition: height .8s;
+}
+.nav-link:nth-child(5){
+    background-color: rgb(175, 238, 238);
+    transition: height 1s;
+}
+.close-icon{
+    position: absolute;    
+}
+
+/* section: header */
+.header{
+    position: relative;
+    perspective: 100rem;
+    overflow: hidden;
+}
+.header-content{    
+    height: calc(100vh - 7rem);
+    background: linear-gradient(rgba(18,113,255,.5),rgba(18,113,255,.3)), url(../img/header-bg.jpg) center no-repeat;
+    background-size: cover;
+}
+.header-text{
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    text-shadow: 0 .3rem .5rem var(--grey-color);    
+}
+.heading{
+    font-size: 6rem;
+    color: var(--white-color);
+}
+.header-pargraph{
+    font-size: 2.5rem;    
+    color: var(--secondary-color);
+    max-width: 55rem;
+    margin: auto;
+}
+.header-content img{
+    height: 100%;
+    animation: img-float 150s infinite;    
+}
+/* start animation header image */
+@keyframes img-float{
+    0%{
+        transform: translateZ(40rem);        
+    }
+    40%{
+        transform: translateZ(-500rem) translateX(150rem);
+        opacity: .8;
+    }
+    70%{
+        transform: translateZ(-1500rem) translateX(800rem);
+        opacity: .6;
+    }
+    80%{
+        transform: translateZ(-50rem) translateX(100rem);
+        opacity: .8;
+    }
+    100%{
+        transform: translateZ(40rem);
+        opacity: 1;
+    }
+}
+/* end animation header image */
+.logo{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: var(--primary-color);
+}
+.logo li{
+    background-color: var(--white-color);
+    text-transform: uppercase;
+    width: 3rem;
+    height: 3rem;
+    margin: .3rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo li:nth-child(1){
+    animation: logo-animation 5s 0.1s infinite;
+}
+.logo li:nth-child(2){
+    animation: logo-animation 5s .2s infinite;
+}
+.logo li:nth-child(3){
+    animation: logo-animation 5s .3s infinite;
+}
+.logo li:nth-child(4){
+    animation: logo-animation 5s .4s infinite;
+}
+.logo li:nth-child(5){
+    animation: logo-animation 5s .5s infinite;
+}
+.logo li:nth-child(6){
+    animation: logo-animation 5s .6s infinite;
+}
+.logo li:nth-child(7){
+    animation: logo-animation 5s .7s infinite;
+}
+/* start animation header logo */
+@keyframes logo-animation{
+    0%{
+        transform: translateY(0);
+    }
+    10%{
+        transform: translateY(0);
+    }
+    15%{
+        transform: translateY(-100%);
+    }
+    20%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+/* end animation header logo */
+
+/* start section: popular tours */
+.popular-tour-title{
+    text-align: center;
+    font-size: 3.3rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+.tours{
+    display: flex;
+    justify-content: space-evenly;
+}
+.card{
+    width: 25%;
+    position: relative;
+    border-radius: 1rem;
+    perspective: 150rem;
+}
+.card img{
+    width: 100%;
+    
+}
+.front-side{
+    text-align: center;
+    position: relative;
+    background-color: var(--white-color);
+    z-index: 10;
+    transition: opactiy .4s , transform .4s , box-shadow .4s;
+    opacity: .9;
+}
+.front-side .tour-name{
+    margin-top: 2rem;
+    display: block;
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.tour-list{
+    padding: 1rem 0 2rem;
+}
+.tour-list-item{
+    padding: 1rem 0;
+    font-size: 1.7rem;
+    width: 80%;
+    margin: auto;    
+    border-bottom: .1rem solid var(--primary-color);
+}
+.back-side{
+    position: absolute;
+    background-color: var(--primary-color);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    transform: translateZ(-5rem) translateX(3rem);
+    opacity: .5;
+    transition: opactiy .4s , transform .4s , box-shadow .4s;
+}
+.change > .back-side{
+    transform: translateZ(0) translateX(0);
+    box-shadow: 0 .5rem 2rem #aaa;
+    opacity: .9;
+}
+.tour-price{
+    color: var(--white-color);
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+.navgtion{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: .5rem 1.5rem;
+    background-color: rgba(255, 254, 254, .8);
+    border: none;
+    border-radius: 1rem;
+}
+.book{
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5rem;
+}
+.navgtion,
+.book{
+    color: var(--grey-color);
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;    
+}
+/* end section: popular tours*/
+/* section: sotires */
+.stories{
+    position: relative;
+}
+.video-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+}
+.bg-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.stories-wrapr{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    flex-direction: column;
+}
+.bg-stories{
+    background-color: rgba(245, 233, 233,.8);
+    padding: 3rem;
+    width: 70%;
+    transform: skewX(20deg);
+}
+.story{
+    display: flex;
+    transform: skewX(-20deg);
+
+}
+.story img{
+    width: 15rem;
+    height: 15rem;
+    margin-right: 2rem;
+    border-radius: 50%;
+}
+.stories-text{
+    letter-spacing: .1rem;
+}
+.storis-heading{
+    font-size: 2.5rem;
+    color: var(--grey-color);
+    margin-bottom: 2rem;
+}
+.stories-pargraph{
+    font-size: 1.5rem;
+    color: var(--light-grey-color);    
+}
+.stories-pargraph::first-letter{
+    margin-left: 2rem;
+}
+/*end section: sotires */
+/* section: contact */
+.contact{
+    background: url("../img/contact-us-bg.png") center no-repeat;
+    background-size: cover;
+    animation: animation-contact 20s infinite;
+}
+@keyframes animation-contact{
+    0%{
+        background-color: #3d3d3d;
+    }
+    25%{
+        background-color: #ced8e4;
+    }
+    50%{
+        background-color: #1e81f3;
+    }
+    75%{
+        background-color: #ff7842;
+    }
+    100%{
+        background-color: #3d3d3d;
+    }
+}
+.contact-heading{
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: var(--white-color);
+    text-shadow: 0 1rem 4rem #000;
+}
+.form{
+    background-color: rgba(255, 254, 254, .9);
+    width: 60%;
+    margin: auto;
+    padding: 8rem 4rem;
+    border-radius: 1.5rem;
+    margin-bottom: 10rem;
+}
+.form input,
+textarea{
+    width: 100%;
+    padding: 3rem 1rem 1rem;
+    margin-bottom: 3rem;
+    border: .1rem solid #ddd;
+    border-radius: 1rem;
+}
+
+.form textarea{
+    max-width: 100%;
+    max-height: 10rem;
+}
+.gro-pos{
+    position: relative;
+}
+.lable{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+.groub{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.groub .gro-pos{
+    width: 47%;
+}
+.con-btn{
+    background-color: var(--light-grey-color);
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    border: none;
+    color: var(--white-color);
+    font-size: 2rem;
+}
+.con-btn:hover{
+    background-color: var(--grey-color);
+}
+/* end contact */
+/* footer */
+.footer{
+    background-color: var(--grey-color);
+    
+}
+.footer-links{
+    width: 60%;
+    margin: auto;
+    justify-content: space-between;
+}
+.footer-links li a{
+    color: var(--white-color);
+    font-size: 2rem;
+    display: inline-block;
+    text-transform: capitalize;
+    padding: .5rem 1rem;
+    background-color: var(--grey-color);
+    transition: all .2s;
+}
+.footer-links li a:hover{
+    box-shadow: 0 2rem 3rem #000;
+    transform: rotate(-10deg);    
+}
+.copy-right{
+    text-align: center;
+    color: var(--white-color);
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+/* end footer */
+/* media */
+@media (min-width: 1444px){
+    html{
+        font-size: 100%;
+    }
+}
+@media (max-width:1024px){
+    html{
+        font-size: 50%;
+    }
+}
+
+@media (max-width:768px){
+    html{
+        font-size: 50%;
+    }
+    .nav-list{
+        flex-direction: column;
+    }
+    .header-content img{
+        display: none;
+    }
+    .header-text{
+        margin-left: 2rem;
+    }
+    .heading{
+        font-size: 3.5rem;
+    }
+    .header-pargraph{
+        font-size: 2rem;
+    }
+    .tours{
+        display: block;
+    }
+    .card{
+        width: 80%;
+        margin: 5rem auto;
+    }
+    .stories-wrapr{
+        display: block;
+    }
+    .bg-stories{
+        width: 80%;
+        margin: 5rem auto;
+        transform: skewX(0);
+    }
+    .story{
+        transform: skewX(0);
+    }
+    .story img{
+        width: 10rem;
+        height: 10rem;
+    }
+    .groub{
+        display: block;
+    }
+    .groub .gro-pos{
+        width: 100%;
+    }
+    .footer-links{
+        display: block;
+        text-align: center;
+    }
+    .footer-links li a {
+        margin-bottom: 2rem;
+    }
+}
+@media (max-width: 425px) {
+    html{
+        font-size: 35%;
+    }
+}
